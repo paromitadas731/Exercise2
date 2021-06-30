@@ -1,0 +1,10 @@
+const once = function (func) {
+    let result;
+    return function(){
+        if (func){
+            result = func.apply(this,arguments);
+            func = null
+        }
+        return result;
+    }
+}
